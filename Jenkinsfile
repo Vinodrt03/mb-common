@@ -6,7 +6,7 @@ pipeline {
         disableConcurrentBuilds()
         timeout(time: 1, unit: 'HOURS')
         timestamps()
-   
+    }
     
     environment {
         AWS_ACCOUNT_ID = "383860290056"
