@@ -6,13 +6,7 @@ pipeline {
         disableConcurrentBuilds()
         timeout(time: 1, unit: 'HOURS')
         timestamps()
-    }
-
-    tools {
-        jdk 'openjdk_11.0.13'
-        maven 'maven'
-        dockerTool 'docker_1.12.6'
-    }
+   
     
     environment {
         AWS_ACCOUNT_ID = "383860290056"
