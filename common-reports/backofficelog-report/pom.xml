@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+    	<groupId>com.milkbasket.rest.services.common-services</groupId>
+		<artifactId>common-reports</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<name>BackOfficeLog Report Service</name>
+    <artifactId>backofficelog-report</artifactId>
+    <packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.milkbasket.core.framework</groupId>
+			<artifactId>websupport-base</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.milkbasket.core.framework</groupId>
+			<artifactId>dbsupport-jdbc</artifactId>
+		</dependency>
+		<dependency>
+            <groupId>com.milkbasket.core.framework</groupId>
+            <artifactId>validator</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+
+		<!-- Test Specific Dependencies -->
+		<dependency>
+			<groupId>com.milkbasket.core.framework</groupId>
+			<artifactId>test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.milkbasket.core.framework</groupId>
+			<artifactId>websupport</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.uncommons</groupId>
+			<artifactId>reportng</artifactId>
+			<version>1.1.4</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.testng</groupId>
+					<artifactId>testng</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>3.0</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

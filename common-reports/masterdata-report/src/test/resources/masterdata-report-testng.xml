@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="MasterDataReportTestSuite">
+	<test name="MasterDataReportRepoTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.masterdata.test.repository.MasterDataReportRepositoryTest" />
+		</classes>
+	</test>
+	<test name="MasterDataReportServiceTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.masterdata.test.service.MasterDataReportServiceTest" />
+		</classes>
+	</test>
+	<test name="MasterDataReportHandlerTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.masterdata.test.handler.MasterDataReportHandlerTest" />
+		</classes>
+	</test>
+</suite>

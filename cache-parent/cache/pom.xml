@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.milkbasket.rest.services.common-services</groupId>
+		<artifactId>cache-parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<name>Common Cache Service</name>
+	<artifactId>cache</artifactId>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.milkbasket.core.framework</groupId>
+			<artifactId>logging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.milkbasket.core.framework</groupId>
+			<artifactId>common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.milkbasket.core.framework</groupId>
+			<artifactId>cache-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.milkbasket.core.framework</groupId>
+			<artifactId>property</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.milkbasket.core.framework</groupId>
+			<artifactId>caching</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.milkbasket.core.framework</groupId>
+			<artifactId>master-data</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.milkbasket.core.framework</groupId>
+			<artifactId>params</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.milkbasket.core.framework</groupId>
+			<artifactId>eligibility</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+		</dependency>
+
+	</dependencies>
+</project>

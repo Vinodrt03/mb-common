@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="ScheduledJobReportTestSuite">
+	<test name="ScheduledJobReportRepoTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.scheduledjob.test.repository.ScheduledJobReportRepositoryTest" />
+		</classes>
+	</test>
+	<test name="ScheduledJobReportServiceTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.scheduledjob.test.service.ScheduledJobReportServiceTest" />
+		</classes>
+	</test>
+	<test name="ScheduledJobReportHandlerTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.scheduledjob.test.handler.ScheduledJobReportHandlerTest" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="PropertyReportTestSuite">
+	<test name="PropertyReportRepoTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.property.test.repository.PropertyReportRepositoryTest" />
+		</classes>
+	</test>
+	<test name="PropertyReportServiceTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.property.test.service.PropertyReportServiceTest" />
+		</classes>
+	</test>
+	<test name="PropertyReportHandlerTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.property.test.handler.PropertyReportHandlerTest" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,108 @@
+# Default Properties(Local)
+spring:
+  profiles: local
+  application:
+    name: common
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  freemarker: 
+    checkTemplateLocation: false
+server:
+  port: 9091 
+  servlet:
+    application-display-name: Common Services
+logging:
+  config: classpath:log4j2/log4j2-local.xml
+---
+# Test Properties
+spring:
+  profiles: test
+  application:
+    name: common
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  freemarker: 
+    checkTemplateLocation: false
+server:
+  port: 9091
+  servlet:
+    application-display-name: Common Services
+logging:
+  config: classpath:log4j2/log4j2-test.xml
+---
+# Development Properties
+spring:
+  profiles: dev
+  application:
+    name: common
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  freemarker: 
+    checkTemplateLocation: false
+server:
+  port: 9091
+  servlet:
+    application-display-name: Common Services
+logging:
+  config: classpath:log4j2/log4j2-dev.xml
+---
+# Qa Properties
+spring:
+  profiles: qa
+  application:
+    name: common
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  freemarker: 
+    checkTemplateLocation: false
+server:
+  port: 9091
+  servlet:
+    application-display-name: Common Services
+logging:
+  config: classpath:log4j2/log4j2-qa.xml
+---
+# Uat Properties
+spring:
+  profiles: uat
+  application:
+    name: common
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  freemarker: 
+    checkTemplateLocation: false
+server:
+  port: 9091
+  servlet:
+    application-display-name: Common Services
+logging:
+  config: classpath:log4j2/log4j2-uat.xml
+---
+# Prod Properties
+spring:
+  profiles: prod
+  application: 
+    name: common
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  freemarker: 
+    checkTemplateLocation: false
+server: 
+  port: 9091
+  servlet:
+    application-display-name: Common Services
+logging:
+  config: classpath:log4j2/log4j2-prod.xml
+    

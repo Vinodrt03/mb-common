@@ -1,0 +1,17 @@
+/target/*
+/.classpath
+/.pmd
+/.pmdruleset.xml
+/.project
+/.settings/
+/test-output/
+/bin/
+/scripts/
+/swagger-marketing.json
+/.clover/
+.settings
+*.classpath
+*.project
+*.factorypath
+*.db
+/target/

@@ -1,0 +1,15 @@
+**/target/
+**/.classpath
+**/.pmd
+**/.pmdruleset.xml
+**/.project
+**/.settings/
+**/test-output/
+**/bin/
+**/.fbExcludeFilterFile
+**/scripts/
+**/findbugs-exclude.xml
+**/pmd-rules.xml
+**/.factorypath
+**/.db
+**/.DS_Store

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <Match>
+        <Bug pattern="
+        	RI_REDUNDANT_INTERFACES
+        	UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD,
+        	UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD
+        	"
+        />
+    </Match>
+</FindBugsFilter>

@@ -1,0 +1,627 @@
+{
+	"PROCURE_BASKETS": {
+		"jobName": "milkbasket-batch-basket-procure-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-basket-procure-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"FAILING_BASKET": {
+		"jobName": "milkbasket-batch-failing-basket-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-failing-basket-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"NOTIFY_LATE_ORDERS": {
+		"jobName": "milkbasket-batch-notify-late-order-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-notify-late-order-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"NOTIFY_NA_PROCUREMENTS": {
+		"jobName": "milkbasket-batch-notify-na-procurement-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-notify-na-procurement-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"NOTIFY_VENDOR": {
+		"jobName": "milkbasket-batch-notify-vendor-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-notify-vendor-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_CANCEL_TRANSACTIONS": {
+		"jobName": "milkbasket-batch-process-cancel-transaction-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-cancel-transaction-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_LOW_BALANCE": {
+		"jobName": "milkbasket-batch-process-low-balance-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-low-balance-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_MILK_CASHBACK": {
+		"jobName": "milkbasket-batch-process-milk-cashback-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-milk-cashback-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"UPDATE_PRODUCT_PRICE": {
+		"jobName": "milkbasket-batch-update-product-price-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-update-product-price-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_REFERRAL": {
+		"jobName": "milkbasket-batch-process-referral-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-referral-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"SEARCHABLE_UPDATE": {
+		"jobName": "milkbasket-batch-searchable-update-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-searchable-update-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_UNPAID_TRANSACTIONS": {
+		"jobName": "milkbasket-batch-process-unpaid-transaction-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-unpaid-transaction-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_MARKETING_COMM": {
+		"jobName": "milkbasket-batch-process-marketing-comm-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-marketing-comm-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"GENERATE_TODAY_BASKET_INVENTORY": {
+		"jobName": "milkbasket-batch-generate-today-basket-inventory-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-generate-today-basket-inventory-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@",
+		"dependentJobs": [
+			{
+				"jobName": "milkbasket-batch-process-basket-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-process-basket-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@",
+				"dependentJobs": [
+					{
+						"jobName": "milkbasket-batch-searchable-update-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-searchable-update-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+					},
+					{
+						"jobName": "milkbasket-batch-product-update-vendor-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-product-update-vendor-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+					},
+					{
+						"jobName": "milkbasket-batch-product-schedule-price-update-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-product-schedule-price-update-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+					},
+					{
+						"jobName": "milkbasket-batch-update-product-price-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-update-product-price-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+					},
+					{
+						"jobName": "milkbasket-batch-orders-eta-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-orders-eta-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+					},
+					{
+						"jobName": "milkbasket-batch-process-order-fee-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-process-order-fee-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+					},
+					{
+						"jobName": "milkbasket-batch-process-membership-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-process-membership-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+					},
+					{
+						"jobName": "milkbasket-batch-reset-stock-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-reset-stock-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+					},
+					{
+						"jobName": "milkbasket-batch-process-grn-days-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-process-grn-days-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+					},
+					{
+						"jobName": "milkbasket-batch-reset-fnv-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-reset-fnv-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+					},
+					{
+						"jobName": "milkbasket-batch-generate-order-routing-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-generate-order-routing-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+					},
+					{
+						"jobName": "milkbasket-batch-generate-order-invoice-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-generate-order-invoice-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@",
+						"dependentJobs": [
+							{
+								"jobName": "milkbasket-batch-generate-rr-order-invoice-@hubType@@env@-@release@",
+								"jobDefinition": "milkbasket-batch-generate-rr-order-invoice-@hubType@@env@-@release@",
+								"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+							},
+							{
+								"jobName": "milkbasket-batch-generate-rr-payment-invoice-@hubType@@env@-@release@",
+								"jobDefinition": "milkbasket-batch-generate-rr-payment-invoice-@hubType@@env@-@release@",
+								"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	"GENERATE_TODAY_BASKET_INVENTORY_WITHOUT_DEPENDENCY": {
+		"jobName": "milkbasket-batch-generate-today-basket-inventory-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-generate-today-basket-inventory-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"GENERATE_BASKET_INVENTORY_WITH_DEPENDENCY": {
+		"jobName": "milkbasket-batch-generate-basket-inventory-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-generate-basket-inventory-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@",
+		"dependentJobs": [
+			{
+				"jobName": "milkbasket-batch-process-basket-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-process-basket-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@",
+				"dependentJobs": [
+					{
+						"jobName": "milkbasket-batch-generate-order-routing-@hubType@@env@-@release@",
+						"jobDefinition": "milkbasket-batch-generate-order-routing-@hubType@@env@-@release@",
+						"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+					}
+				]
+			}
+		]
+	},
+	"PROCESS_ORDER_FEE_WITH_DEPENDENCY": {
+		"jobName": "milkbasket-batch-process-order-fee-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-order-fee-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@",
+		"dependentJobs": [
+			{
+				"jobName": "milkbasket-batch-searchable-update-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-searchable-update-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-product-update-vendor-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-product-update-vendor-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-product-schedule-price-update-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-product-schedule-price-update-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-update-product-price-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-update-product-price-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-orders-eta-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-orders-eta-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-process-membership-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-process-membership-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-reset-stock-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-reset-stock-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-process-grn-days-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-process-grn-days-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-reset-fnv-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-reset-fnv-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-generate-order-invoice-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-generate-order-invoice-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			}
+		]
+	},
+	"PROCESS_BASKET": {
+		"jobName": "milkbasket-batch-process-basket-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-basket-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@",
+		"dependentJobs": [
+			{
+				"jobName": "milkbasket-batch-searchable-update-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-searchable-update-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-product-update-vendor-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-product-update-vendor-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-product-schedule-price-update-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-product-schedule-price-update-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-update-product-price-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-update-product-price-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-reset-stock-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-reset-stock-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-process-grn-days-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-process-grn-days-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-orders-eta-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-orders-eta-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-process-order-fee-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-process-order-fee-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-process-membership-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-process-membership-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-reset-fnv-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-reset-fnv-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-generate-order-routing-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-generate-order-routing-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			},
+			{
+				"jobName": "milkbasket-batch-generate-order-invoice-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-generate-order-invoice-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			}
+		]
+	},
+	"PROCESS_BASKET_WITHOUT_DEPENDENCY": {
+		"jobName": "milkbasket-batch-process-basket-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-basket-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_ORDER": {
+		"jobName": "milkbasket-batch-process-order-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-order-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_MBPASS": {
+		"jobName": "milkbasket-batch-process-mbpass-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-mbpass-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_SCHEDULE_COMM": {
+		"jobName": "milkbasket-batch-process-schedule-comm-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-schedule-comm-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"GENERATE_BASKET_INVENTORY": {
+		"jobName": "milkbasket-batch-generate-basket-inventory-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-generate-basket-inventory-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PRODUCT_LOW_STOCK": {
+		"jobName": "milkbasket-batch-product-low-stock-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-product-low-stock-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PRODUCT_UPDATE_VENDOR": {
+		"jobName": "milkbasket-batch-product-update-vendor-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-product-update-vendor-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"RECURRING_ORDER_RENEW": {
+		"jobName": "milkbasket-batch-recurring-order-renew-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-recurring-order-renew-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"REMOVE_FAILING_BASKET": {
+		"jobName": "milkbasket-batch-remove-failing-basket-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-remove-failing-basket-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"RESET_FNV": {
+		"jobName": "milkbasket-batch-reset-fnv-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-reset-fnv-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"RESET_STOCK": {
+		"jobName": "milkbasket-batch-reset-stock-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-reset-stock-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"ES_BULK_INDEXING": {
+		"jobName": "milkbasket-batch-es-bulk-indexing-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-es-bulk-indexing-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_DASHBOARD_MOM": {
+		"jobName": "milkbasket-batch-process-dashboard-mom-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-dashboard-mom-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_DASHBOARD": {
+		"jobName": "milkbasket-batch-process-dashboard-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-dashboard-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_VENDOR_HOLIDAY": {
+		"jobName": "milkbasket-batch-process-vendor-holiday-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-vendor-holiday-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"GENERATE_TEAM_DAILY_CONFIG": {
+		"jobName": "milkbasket-batch-generate-team-daily-config-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-generate-team-daily-config-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"ORDER_PRODUCT_SUMMARY": {
+		"jobName": "milkbasket-batch-order-product-summary-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-order-product-summary-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"CACHE_RELOAD": {
+		"jobName": "milkbasket-batch-cache-reload-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-cache-reload-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"GENERATE_ORDER_ROUTING": {
+		"jobName": "milkbasket-batch-generate-order-routing-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-generate-order-routing-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PUSH_SALES_TO_WMS": {
+		"jobName": "milkbasket-batch-push-sales-to-wms-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-push-sales-to-wms-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"MY_GATE_RECURRING_BASKETS": {
+		"jobName": "milkbasket-batch-mygate-recurring-basket-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-mygate-recurring-basket-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_MB_PLUS": {
+		"jobName": "milkbasket-batch-process-mb-plus-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-mb-plus-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PRODUCT_SCHEDULED_PRICE_UPDATE": {
+		"jobName": "milkbasket-batch-product-schedule-price-update-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-product-schedule-price-update-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"BARCODE_ADDER": {
+		"jobName": "milkbasket-batch-barcode-adder-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-barcode-adder-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"CREATE_CUSTOMER_SESSION": {
+		"jobName": "milkbasket-batch-create-customer-session-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-create-customer-session-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"INITIATE_BULK_CASHBACK": {
+		"jobName": "milkbasket-batch-initiate-bulk-cashback-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-initiate-bulk-cashback-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"ORDERS_ETA": {
+		"jobName": "milkbasket-batch-orders-eta-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-orders-eta-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_ORDER_FEE": {
+		"jobName": "milkbasket-batch-process-order-fee-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-order-fee-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_MEMBERSHIP": {
+		"jobName": "milkbasket-batch-process-membership-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-membership-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@",
+		"dependentJobs": [
+			{
+				"jobName": "milkbasket-batch-process-auto-debit-transactions-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-process-auto-debit-transactions-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			}
+		]
+	},
+	"PROCESS_AUTO_DEBIT_TRANSACTIONS": {
+		"jobName": "milkbasket-batch-process-auto-debit-transactions-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-auto-debit-transactions-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_CASHBACK_REPORT": {
+		"jobName": "milkbasket-batch-process-cashback-report-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-cashback-report-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_SUPERCHARGE": {
+		"jobName": "milkbasket-batch-process-supercharge-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-supercharge-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"RESET_BUNDLE_STOCK": {
+		"jobName": "milkbasket-batch-reset-bundle-stock-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-reset-bundle-stock-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@",
+		"dependentJobs": [
+			{
+				"jobName": "milkbasket-batch-es-bulk-indexing-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-es-bulk-indexing-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			}
+		]
+	},
+	"INCREMENTAL_RESET_BUNDLE_STOCK": {
+		"jobName": "milkbasket-batch-inc-reset-bundle-stock-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-inc-reset-bundle-stock-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"COLLECTION_CACHE_RELOAD": {
+		"jobName": "milkbasket-batch-collection-cache-reload-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-collection-cache-reload-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"SOCIETY_MY_GATE_STATUS_UPDATE": {
+		"jobName": "milkbasket-batch-society-my-gate-status-update-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-society-my-gate-status-update-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"AUTO_BASKET_PRODUCT_REMOVE": {
+		"jobName": "milkbasket-batch-auto-basket-product-remove-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-auto-basket-product-remove-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"GENERATE_ORDER_ISSUE": {
+		"jobName": "milkbasket-batch-generate-order-issue-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-generate-order-issue-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_INACTIVITY_FEE": {
+		"jobName": "milkbasket-batch-process-inactivity-fee-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-inactivity-fee-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"AUTO_FRESH_BASKET_PRODUCT_REMOVE": {
+		"jobName": "milkbasket-batch-auto-fresh-basket-product-remove-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-auto-fresh-basket-product-remove-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"GENERATE_ORDER_INVOICE": {
+		"jobName": "milkbasket-batch-generate-order-invoice-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-generate-order-invoice-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"GENERATE_RR_ORDER_INVOICE": {
+		"jobName": "milkbasket-batch-generate-rr-order-invoice-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-generate-rr-order-invoice-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"GENERATE_RR_PAYMENT_INVOICE": {
+		"jobName": "milkbasket-batch-generate-rr-payment-invoice-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-generate-rr-payment-invoice-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"REVENUE_CATEGORY_TOGGLE": {
+		"jobName": "milkbasket-batch-revenue-category-toggle-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-revenue-category-toggle-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"MARKETPLACE_ES_BULK_INDEXING": {
+		"jobName": "milkbasket-batch-marketplace-es-bulk-indexing-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-marketplace-es-bulk-indexing-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_MARKETPLACE_STORE_AVAILABILITY": {
+		"jobName": "milkbasket-batch-process-marketplace-store-availability-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-marketplace-store-availability-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"WALLET_REFUND_TICKET": {
+		"jobName": "milkbasket-batch-wallet-refund-ticket-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-wallet-refund-ticket-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"GENERATE_MANPOWER_INCENTIVE": {
+		"jobName": "milkbasket-batch-generate-manpower-incentive-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-generate-manpower-incentive-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_GRN_DAYS": {
+		"jobName": "milkbasket-batch-process-grn-days-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-grn-days-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"IMAGE_BULK_UPLOAD_FEATURE": {
+		"jobName": "milkbasket-batch-image-bulk-upload-feature-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-image-bulk-upload-feature-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"VALIDATE_CUSTOMER_SAMPLE": {
+		"jobName": "milkbasket-batch-validate-customer-sample-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-validate-customer-sample-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"NEW_USER_SEGMENT_UPDATE": {
+		"jobName": "milkbasket-batch-new-user-segment-update-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-new-user-segment-update-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"UPDATE_CIMS_TICKET_STATUS": {
+		"jobName": "milkbasket-batch-update-cims-ticket-status-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-update-cims-ticket-status-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_AUTO_SAMPLE_COMMS": {
+		"jobName": "milkbasket-batch-process-auto-sample-comms-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-auto-sample-comms-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"LATE_DELIVERY_ETA": {
+		"jobName": "milkbasket-batch-late-delivery-eta-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-late-delivery-eta-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"CASH_IN_WALLET_SCHEME": {
+		"jobName": "milkbasket-batch-cash-in-wallet-scheme-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-cash-in-wallet-scheme-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PERMANENT_BUCKET_WEEK": {
+		"jobName": "milkbasket-batch-permanent-bucket-reset-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-permanent-bucket-reset-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PERMANENT_BUCKET_MONTH": {
+		"jobName": "milkbasket-batch-permanent-bucket-reset-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-permanent-bucket-reset-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"AUTO_ADD_SAMPLE_CASHBACK": {
+		"jobName": "milkbasket-batch-auto-add-sample-cashback-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-auto-add-sample-cashback-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+	},
+	"PROCESS_PENDING_REFUNDS": {
+		"jobName": "milkbasket-batch-process-pending-refunds-@hubType@@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-pending-refunds-@hubType@@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@",
+		"dependentJobs": [
+			{
+				"jobName": "milkbasket-batch-wallet-refund-ticket-@hubType@@env@-@release@",
+				"jobDefinition": "milkbasket-batch-wallet-refund-ticket-@hubType@@env@-@release@",
+				"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-@computeType@-compute-@env@-@release@"
+			}
+		]
+	},
+	"PROCESS_CLEAR_BASKETS": {
+		"jobName": "milkbasket-batch-process-clear-baskets-@env@-@release@",
+		"jobDefinition": "milkbasket-batch-process-clear-baskets-@env@-@release@",
+		"jobQueue": "arn:aws:batch:@zone@:@account@:job-queue/milkbasket-medium-compute-@env@-@release@"
+	}
+}

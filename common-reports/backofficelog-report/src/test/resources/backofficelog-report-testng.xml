@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="BackOfficeLogReportTestSuite">
+	<test name="BackOfficeLogReportRepoTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.backofficelog.test.repository.BackOfficeLogReportRepositoryTest" />
+		</classes>
+	</test>
+	<test name="BackOfficeLogReportServiceTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.backofficelog.test.service.BackOfficeLogReportServiceTest" />
+		</classes>
+	</test>
+	<test name="BackOfficeLogReportHandlerTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.backofficelog.test.handler.BackOfficeLogReportHandlerTest" />
+		</classes>
+	</test>
+	<test name="AppLogReportRepoTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.backofficelog.test.repository.AppLogReportRepositoryTest" />
+		</classes>
+	</test>
+	<test name="AppLogReportServiceTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.backofficelog.test.service.AppLogReportServiceTest" />
+		</classes>
+	</test>
+	<test name="AppLogReportHandlerTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.backofficelog.test.handler.AppLogReportHandlerTest" />
+		</classes>
+	</test>
+	<test name="DbLogReportRepoTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.backofficelog.test.repository.DbLogReportRepositoryTest" />
+		</classes>
+	</test>
+	<test name="DbLogReportServiceTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.backofficelog.test.service.DbLogReportServiceTest" />
+		</classes>
+	</test>
+	<test name="DbLogReportHandlerTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.backofficelog.test.handler.DbLogReportHandlerTest" />
+		</classes>
+	</test>
+	
+</suite>

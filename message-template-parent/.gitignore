@@ -1,0 +1,10 @@
+/target/
+/.classpath
+/.pmd
+/.pmdruleset.xml
+/.project
+/.settings/
+/test-output/
+/bin/
+/.fbExcludeFilterFile
+/.clover/

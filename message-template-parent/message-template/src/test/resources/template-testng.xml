@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TemplateServiceTestSuite">
+	<test name="TemplateMapperTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.common.communication.template.test.mapper.TemplateMapperTest" />
+		</classes>
+	</test>
+	<test name="TemplateRepositoryTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.common.communication.template.test.repository.TemplateRepositoryTest" />
+		</classes>
+	</test>
+	<test name="TemplateServiceTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.common.communication.template.test.service.TemplateServiceTest" />
+		</classes>
+	</test>
+	<test name="TemplateHandlerTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.common.communication.template.test.handler.TemplateHandlerTest" />
+		</classes>
+	</test>
+</suite>

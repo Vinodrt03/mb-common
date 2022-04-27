@@ -1,0 +1,12 @@
+/target/
+/.classpath
+/.pmd
+/.pmdruleset.xml
+/.project
+/.settings/
+/test-output/
+/bin/
+/swagger-common.json
+/.clover/
+/.factorypath
+.fbExcludeFilterFile

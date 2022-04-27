@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CommonCommunicationTestSuite">
+
+	<test name="EmailHandlerTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.common.communication.test.handler.EmailHandlerTest" />
+		</classes>
+	</test>
+	
+	<test name="SmsHandlerTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.common.communication.test.handler.SmsHandlerTest" />
+		</classes>
+	</test>
+	
+	<test name="PushHandlerTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.common.communication.test.handler.PushHandlerTest" />
+		</classes>
+	</test>
+
+</suite>

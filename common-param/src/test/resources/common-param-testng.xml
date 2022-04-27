@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="ParamServiceTestSuite">
+	<test name="ParamRepositoryTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.param.test.repository.ParamRepositoryTest" />
+		</classes>
+	</test>
+	<test name="ParamServiceTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.param.test.service.ParamServiceTest" />
+		</classes>
+	</test>
+	<test name="ParamHandlerTest">
+		<classes>
+			<class
+				name="com.milkbasket.rest.services.param.test.handler.ParamHandlerTest" />
+		</classes>
+	</test>
+</suite>
